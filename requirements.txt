@@ -17,3 +17,5 @@ scipy==1.16.2
 six==1.17.0
 threadpoolctl==3.6.0
 tzdata==2025.2
+paddlepaddle==2.6.1
+paddleocr==2.7.0.3
