@@ -1,4 +1,6 @@
 import cv2
+import subprocess
+
 
 # Try to open your default webcam (0 = first camera)
 cap = cv2.VideoCapture(1)
@@ -17,8 +19,11 @@ while True:
 
     key = cv2.waitKey(1) & 0xFF
     if key == ord(' '):  # SPACE
-        cv2.imwrite("test_capture.png", frame)
-        print("✅ Saved frame as test_capture.png")
+        cv2.imwrite("capture.png", frame)
+        print("✅ Saved frame as capture.png")
+
+         # Run textract.py after capture
+        subprocess.run(["python", "textract.py", "capture.png"])
         break
     elif key in (ord('q'), 27):  # q or ESC
         print("❌ Quit without saving")
