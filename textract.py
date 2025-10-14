@@ -1,8 +1,8 @@
 import boto3
 
-textract = boto3.client('textract') 
+textract = boto3.client("textract", region_name="us-east-1")
 
-with open('image1.png', 'rb') as img:
+with open('capture.png', 'rb') as img:
     document_bytes = img.read()
 
     response = textract.detect_document_text(Document = {'Bytes': document_bytes})
